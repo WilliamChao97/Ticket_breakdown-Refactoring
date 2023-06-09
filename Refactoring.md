@@ -9,3 +9,18 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+### The changes that I made were:
+1. Constant exports are now inside function
+The original source code had constants such as TRIVIAL_PARTITION_KEY being exported outside the function. This may not be ideal if these constants are only used within the function itself. In the refactored code, these constants have been moved into the function ensuring better encapsulation.
+
+2. Simplified If-Else Statements
+The refactored code has simplified and removed unnecessary logic in if-else statements. By removing redundant brackets and using early returns where possible makes the code easier to read and understand.
+
+3. Hash object created inside the function
+The original code created a single global hash object which could potentially cause issues when reusing the hash object. To overcome this, the hash object is now created inside the function. Consequently, creating a new hash object each time the function is called ensures improved efficiency and avoids potential issues.
+
+4. Changed Export Statement
+Finally, the export statement was changed from the original module.exports syntax to the shorter version using exports. for consistency purposes.
+
+All of these changes make for a cleaner and easily digestibl
